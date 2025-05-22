@@ -10,21 +10,13 @@ Dự án này triển khai hệ thống **phát hiện té ngã** thời gian th
 
 ## 🔧 Thành phần hệ thống Verilog
 
-### `i2c_master.v`
+### `mpu6050_interface.v`
 - Điều khiển giao tiếp I2C:
   - Start condition
   - Gửi địa chỉ slave
   - Đọc/ghi dữ liệu từ/to MPU-6050
   - ACK/NACK & Stop condition
 - Giao tiếp trực tiếp với các chân SDA/SCL thực tế của kit.
-
----
-
-### `wrapper.v`
-- Đóng vai trò gọi `i2c_master` liên tục để:
-  - Đọc 6 thanh ghi: `ACCEL_X`, `ACCEL_Y`, `ACCEL_Z`, `GYRO_X`, `GYRO_Y`, `GYRO_Z`
-- Kết quả lưu vào các thanh ghi nội bộ (`reg_acc_x`, `reg_gyro_y`, ...).
-- FSM quản lý trạng thái đọc cảm biến.
 
 ---
 
